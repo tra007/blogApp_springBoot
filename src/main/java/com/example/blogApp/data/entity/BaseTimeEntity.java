@@ -1,12 +1,11 @@
 package com.example.blogApp.data.entity;
 
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @MappedSuperclass
+@Inheritance(strategy = InheritanceType.JOINED)
 public class BaseTimeEntity extends BaseEntity {
 
     private LocalDateTime createdAt;
@@ -24,3 +23,4 @@ public class BaseTimeEntity extends BaseEntity {
 
 
 }
+
